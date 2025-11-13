@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madrid Corner</title>
+<style>  
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #ffffff; 
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+h1 {
+    font-family: 'Georgia', serif;
+    text-align: center;
+    background-color: #00529F; 
+    color: white; 
+    padding: 20px 0;
+    font-size: 2.5em;
+    letter-spacing: 1px; 
+}
+
+header {
+    background-color: #fff;
+    border-bottom: 4px solid #FEBE10; 
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px; 
+}
+
+nav a {
+    text-decoration: none;
+    color: #00529F;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 8px 15px; 
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #00529F;  
+    color: #FFFFFF;
+}
+
+.hero {
+    
+    background-image: linear-gradient(rgba(0, 82, 159, 0.8), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1596706268875-e0475da1d916?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNjAzN3wwfDF8c2VhcmNofDEwfHxzYW50aWFnbyUyMGJlcm5hYmV1fGVufDB8fHx8MTcwMTU0NzYzOXww&ixlib=rb-4.0.3&q=80&w=1080');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: inset 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    font-family: 'Georgia', serif;
+    margin-bottom: 10px;
+    color: white;
+    border-bottom: none; 
+}
+
+.hero p {
+    font-size: 1.25em;
+    font-style: italic;
+    max-width: 600px; 
+    margin: 0 auto;
+}
+
+
+main {
+    flex-grow: 1;
+    width: 90%;
+    max-width: 960px; 
+    margin: 30px auto; 
+}
+
+section {
+    margin-bottom: 40px; 
+}
+
+h2 {
+    color: #00529F; 
+    border-bottom: 2px solid #FEBE10; 
+    padding-bottom: 5px;
+    margin-bottom: 20px; 
+    font-size: 1.8em;
+}
+
+.a2 {
+    text-align: center; 
+}
+
+.a2 h2 {
+    text-align: center;
+    border: none; 
+    margin-bottom: 25px;
+    font-size: 1.5em;
+}
+
+.a2 ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap; 
+}
+
+.a2 a {
+    display: block;
+    background-color: #00529F;
+    color: #FFFFFF;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-size: 1.2em;
+    min-width: 220px; 
+
+    transition: background-color 0.3s ease, 
+                transform 0.3s ease, 
+                box-shadow 0.3s ease;
+}
+
+.a2 a:hover {
+    background-color: #FEBE10;
+    color: #333; /* Dark text on yellow background */
+    text-decoration: none;
+    transform: translateY(-5px); /* "Lifts" the card on hover */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.a3 {
+    background-color: #f9f9f9; 
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    
+    border-left: 5px solid #00529F; 
+}
+
+.a3 p {
+    font-size: 1.05em;
+    color: #1a1919;
+}
+
+
+
+footer {
+    background-color: #333;
+    color: #f4f4f4;
+    text-align: center;
+    padding: 30px;
+    margin-top: auto; 
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: #FEBE10; 
+    text-decoration: none;
+    transition: text-decoration 0.3s ease;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+</style>
+    </head>
+<body>
+    <h1>Madrid Corner</h1>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="extras.html">Extras</a></li>
+                <li><a href="about.html">About Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Welcome to Madrid Corner!</h2>
+        <p>Discover the history, the players, and the passion that makes Real Madrid the greatest club in the world of football.</p>
+    </section>
+
+    <main>
+        <section class="a2">
+            <h2>Choose what you'd like to know:</h2>
+            <ul>
+                <li><a href="trophys.html">Trophies</a></li>
+                <li><a href="icons.html">Icons & Legends</a></li>
+                <li><a href="legacy.html">Legacy</a></li>
+            </ul>
+        </section>
+
+        <section class="a3">
+            <h2>A Madridista's Message</h2>
+            <p>I am a beginner in the field of web development and this is my first project. I feel really delighted to create my first website dedicated to <strong>Real Madrid</strong>, a club that has inspired me deeply.</p>
+            <p>The goal is to create an engaging and informative experience for football enthusiasts and fans of Real Madrid alike.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p><a href="https://www.realmadrid.com/en">Visit Real Madrid's Official Website</a></p>
+        <p><a href="https://github.com/atharav842-dot">My Github</a></p>
+        <p>&copy; 2025 Madrid Corner. All rights reserved.</p>
+    </footer>
+</body>
+</html>
