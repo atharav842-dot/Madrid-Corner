@@ -5,11 +5,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = htmlspecialchars($_POST['fan_name']);
     $player = htmlspecialchars($_POST['fav_player']);
 
-    
     if (!empty($name) && !empty($player)) {
-        $message = "<div class='success-msg'>Hola, <strong>$name</strong>! Great choice picking <strong>$player</strong>. Welcome to the Madridista family! ⚽</div>";
+        $message = "<div style='color: green; margin-bottom: 15px;'><strong>Hola, $name!</strong> Great choice picking <strong>$player</strong>. Welcome to the Madridista family! ⚽</div>";
     } else {
-        $message = "<div class='error-msg'>Please fill in all fields!</div>";
+        $message = "<div style='color: red; margin-bottom: 15px;'>Please fill in all fields!</div>";
     }
 }
 ?>
@@ -229,10 +228,32 @@ footer a:hover {
         <section class="a2">
             <h2>Choose what you'd like to know:</h2>
             <ul>
-                <li><a href="trophys.html">Trophies</a></li>
+                <li><a href="trophies.php">Trophies</a></li>
                 <li><a href="icons.html">Icons & Legends</a></li>
                 <li><a href="legacy.html">Legacy</a></li>
             </ul>
+        </section>
+        
+        <section class="a3">
+            <h2>Join the Fan Zone</h2>
+            <p>Enter your name and favorite player to get a personalized shoutout!</p>
+            <br>
+            
+            <?php echo $message; ?>
+
+            <form method="POST" action="index.php">
+                <div style="margin-bottom: 15px;">
+                    <label style="font-weight: bold; color: #00529F;">Your Name:</label><br>
+                    <input type="text" name="fan_name" required style="padding: 10px; width: 100%; max-width: 300px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+
+                <div style="margin-bottom: 15px;">
+                    <label style="font-weight: bold; color: #00529F;">Favorite Player:</label><br>
+                    <input type="text" name="fav_player" required style="padding: 10px; width: 100%; max-width: 300px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+
+                <button type="submit" style="background-color: #00529F; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 1rem; font-weight: bold;">Submit</button>
+            </form>
         </section>
 
         <section class="a3">
@@ -245,7 +266,7 @@ footer a:hover {
     <footer>
         <p><a href="https://www.realmadrid.com/en">Visit Real Madrid's Official Website</a></p>
         <p><a href="https://github.com/atharav842-dot">My Github</a></p>
-        <p>&copy; 2025 Madrid Corner. All rights reserved.</p>
+        <p>&copy; <?php echo date("Y"); ?> Madrid Corner. All rights reserved.</p>
     </footer>
 </body>
 </html>
