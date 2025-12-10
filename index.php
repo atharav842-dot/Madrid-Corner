@@ -1,3 +1,18 @@
+<?php
+$message = ""; 
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = htmlspecialchars($_POST['fan_name']);
+    $player = htmlspecialchars($_POST['fav_player']);
+
+    
+    if (!empty($name) && !empty($player)) {
+        $message = "<div class='success-msg'>Hola, <strong>$name</strong>! Great choice picking <strong>$player</strong>. Welcome to the Madridista family! ⚽</div>";
+    } else {
+        $message = "<div class='error-msg'>Please fill in all fields!</div>";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
