@@ -1,4 +1,21 @@
-<!DOCTYPE html>
+<?php
+
+$feedback_msg = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $visitor_name = htmlspecialchars($_POST['visitor_name']);
+    $visitor_msg = htmlspecialchars($_POST['visitor_msg']);
+
+    
+    if (!empty($visitor_name) && !empty($visitor_msg)) {
+        
+        $feedback_msg = "<div class='success-box'>Thanks for the message, <strong>$visitor_name</strong>! I'll read it shortly.</div>";
+    } else {
+        $feedback_msg = "<div class='error-box'>Please enter both your name and a message.</div>";
+    }
+}
+?><!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />

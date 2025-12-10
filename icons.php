@@ -1,13 +1,25 @@
+<?php
+$message = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $voted_player = htmlspecialchars($_POST['fav_icon']);
+    
+    if (!empty($voted_player)) {
+        $message = "<div class='vote-msg'>✅ You voted for <strong>$voted_player</strong>! excellent choice.</div>";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>The Icons</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            max-width: approx(900px);
+            max-width: 900px; /* Fixed 'approx' typo so layout works */
             margin: auto;
             padding: 20px;
             background-color: #1b1a1a;
@@ -38,13 +50,11 @@
             padding: 0;
         }   
         li img{
-           
             border: 4px solid rgb(216, 207, 207);
             border-radius: 10px;
             transition: transform 0.3s;
             border-radius: 50%;
             height: 150px;
-            
         }
 
         li img:hover {
@@ -93,20 +103,54 @@
             color: #fff;
             transition: background-color 0.3s ease, color 0.3s ease ;
         }
+
+        /* --- NEW CSS JUST FOR THE PHP FORM --- */
+        .vote-form {
+            text-align: center;
+            margin: 20px 0;
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .vote-form select { padding: 8px; font-size: 16px; }
+        .vote-form button { padding: 8px 15px; background: #00529F; color: white; border: none; cursor: pointer; }
+        .vote-msg { text-align: center; background: #d4edda; color: #155724; padding: 10px; margin-bottom: 10px; border-radius: 5px; }
+
     </style>
 </head>
 <body>
     <header>
         <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.php">Home</a></li>
                     <li><a href="extras.html">Extras</a></li>
-                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="about.php">About Me</a></li>
                 </ul>
             </nav>
     </header>
+    
     <h1>The Icons of Real Madrid</h1>
+
+    <?php echo $message; ?>
+
+    <div class="vote-form">
+        <h3>Vote for your favorite Legend:</h3>
+        <form method="POST" action="icons.php">
+            <select name="fav_icon">
+                <option value="Cristiano Ronaldo">Cristiano Ronaldo</option>
+                <option value="Alfredo Di Stefano">Alfredo Di Stefano</option>
+                <option value="Zinedine Zidane">Zinedine Zidane</option>
+                <option value="Sergio Ramos">Sergio Ramos</option>
+                <option value="Raul Gonzalez">Raul Gonzalez</option>
+                <option value="Iker Casillas">Iker Casillas</option>
+                <option value="Luka Modric">Luka Modric</option>
+            </select>
+            <button type="submit">Vote</button>
+        </form>
+    </div>
+
     <p>Real Madrid has been home to some of the greatest footballers in history. Here are a few iconic players who have left an indelible mark on the club:</p>
+    
     <div class="icons-gallery">
         <ol>
             <li><span><img src="https://drive.google.com/thumbnail?view&id=11Okut7lNoYoDVNS8ucdQs3xTI_iSUGzD" alt="Cristiano Ronaldo"width="170"height="110"></span> The legendary <strong>Cristiano Ronaldo</strong> often carried the team on his shoulders, scoring crucial goals and winning numerous titles. He is considered one of the greatest footballers of all time.</li>

@@ -1,3 +1,15 @@
+<?php
+// Define the trophy data here
+$trophies = [
+    "UEFA Champions League" => "15 titles",
+    "La Liga" => "36 titles",
+    "Copa del Rey" => "20 titles",
+    "Supercopa de España" => "13 titles",
+    "UEFA Super Cup" => "6 titles",
+    "FIFA Club World Cup" => "5 titles"
+];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +19,8 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
-
-         body{
-               font-family: 'Lato', sans-serif;
+        body{
+             font-family: 'Lato', sans-serif;
             background-color: #c196c7; 
             color: #422480; 
             margin: 0;
@@ -89,6 +100,7 @@
             transform: translateY(-5px) scale(1.02); 
             box-shadow: 0 5px 15px rgba(0, 82, 159, 0.15); 
             cursor: pointer; 
+        }
     </style>
 </head>
 <body>
@@ -105,13 +117,12 @@
     <h1>Trophy Section</h1>
      
     <p>Real Madrid has a rich history of success, and their trophy cabinet is a testament to that. Here are some of the most notable trophies won by the club:</p>
+    
     <ul>
-        <li>UEFA Champions League: 15 titles</li>
-        <li>La Liga: 36 titles</li>
-        <li>Copa del Rey: 20 titles</li>
-        <li>Supercopa de España: 13 titles</li>
-        <li>UEFA Super Cup: 6 titles</li>
-        <li>FIFA Club World Cup: 5 titles</li>
+        <?php foreach ($trophies as $name => $count): ?>
+            <li><?php echo $name . ": " . $count; ?></li>
+        <?php endforeach; ?>
     </ul>
+
 </body>
 </html>
